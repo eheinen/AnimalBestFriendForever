@@ -55,10 +55,23 @@ body {
 .btn-default:active { background-color: #DDD; }
 
 
+.message-container { width: 100%; padding: 20px 0 20px 0; text-align: center; font-size: 18px; display: none; }
+.message-container .message-close {
+	float: right;
+	margin-right: 20px;
+	margin-left: -20px;
+	font-family: cursive;
+	cursor: pointer;
+	margin-top: -3px;
+	content: 'x'
+}
+.message-fail { background-color: #FCB8B8; color: #D40F0F; }
+.message-pass { background-color: #DAFCB8; color: #5FA814; }
+
 .container-login {
 	text-align: center;
 	position:fixed;
-	top: 50%;
+	top: 35%;
 	left: 50%;
 	width:30em;
 	height:18em;
