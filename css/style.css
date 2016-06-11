@@ -1,90 +1,213 @@
-/**
- * CSSReset.com - How To Keep Footer At Bottom of Page with CSS
- *
- * Original Tutorial: http://www.cssreset.com/2010/css-tutorials/how-to-keep-footer-at-bottom-of-page-with-css/
- * License: Free - do whatever you like with it! Credit and linkbacks much appreciated.
- *
- * NB: Make sure the value for 'padding-bottom' on #content is equal to or greater than the height of #footer.
- */
-html,
-body {
-	margin:0;
-	padding:0;
-	height:100%;
+@font-face {
+    font-family: timeburner;
+    src: url(../fonts/timeburnerbold.ttf);
+}
+@font-face {
+    font-family: semplicita;
+    src: url(../fonts/Semplicita.otf);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    outline: none;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
 }
 #wrapper {
-	min-height:100%;
-	position:relative;
+    min-height: 100%;
+    position: relative;
 }
 #header {
-	background:#333;
-	padding:10px;
-	height: 50px;
-	margin-bottom: 20px;
+    background: #333;
+    height: 70px;
+    margin-bottom: 20px;
 }
 #content {
-	padding-bottom:100px; /* Height of the footer element */
-  width: 80%;
-	margin: auto auto;
+    padding-bottom: 100px;
+    /* Height of the footer element */
+    width: 80%;
+    margin: auto auto;
 }
 #footer {
-	background:#F62459;
-	width:100%;
-	height:100px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	margin-top: 20px;
+    background: #F62459;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 20px;
 }
 
-.btn-action,
+/* Componentes*/
+
+.btn-action, .btn-default {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 0 10px 0;
+}
+.btn-action {
+    background-color: #52B3D9;
+    color: #FFF;
+}
+.btn-action:active {
+    background-color: #3498DB;
+}
 .btn-default {
-	width: 100px;
-	height: 40px;
-	font-size: 14px;
-	border-radius: 10px;
-  border-style: none;
-	cursor: pointer;
-	outline: none;
-	margin: 10px 0 10px 0;
+    background-color: #EEE;
 }
-
-.btn-action { background-color: #52B3D9; color: #FFF; }
-.btn-action:active { background-color: #3498DB; }
-.btn-default { background-color: #EEE; }
-.btn-default:active { background-color: #DDD; }
-
-
-.message-container { width: 100%; padding: 20px 0 20px 0; text-align: center; font-size: 18px; display: none; }
+.btn-default:active {
+    background-color: #DDD;
+}
+.message-container {
+    width: 100%;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 18px;
+    display: none;
+}
 .message-container .message-close {
-	float: right;
-	margin-right: 20px;
-	margin-left: -20px;
-	font-family: cursive;
-	cursor: pointer;
-	margin-top: -3px;
-	content: 'x'
+    float: right;
+    margin-right: 20px;
+    margin-left: -20px;
+    font-family: verdana;
+    cursor: pointer;
+    margin-top: -3px;
+    content: 'x'
 }
-.message-fail { background-color: #FCB8B8; color: #D40F0F; }
-.message-pass { background-color: #DAFCB8; color: #5FA814; }
+.message-fail {
+    background-color: #FCB8B8;
+    color: #D40F0F;
+}
+.message-pass {
+    background-color: #DAFCB8;
+    color: #5FA814;
+}
+.dropbtn {
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-family: timeburner;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-family: timeburner;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-container { height: 70px; margin-right: 20px;}
+.menu-container .menu-links { float: right; margin-top: 20px; }
+.menu-container #adote-seu,
+.menu-container #minha-conta,
+.menu-container #sair
+{
+    font-family: timeburner;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 0 20px 0 10px;
+    border-bottom-style: solid;
+}
+
+.dropdown:hover .dropbtn,
+.menu-container #adote-seu,
+.menu-container .fa-heart { color: #F62459; }
+
+.menu-container #minha-conta,
+.menu-container .fa-user { color: #4183D7; }
+
+.menu-container #sair,
+.menu-container .fa-user-times { color: #F9BF3B; }
+
+.menu-container {
+    float: right;
+}
+.menu-container ul {
+    display: inline;
+}
+
+/* Login */
 
 .container-login {
-	text-align: center;
-	position:fixed;
-	top: 35%;
-	left: 50%;
-	width:30em;
-	height:18em;
-	margin-top: -9em; /*set to a negative number 1/2 of your height*/
-	margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    text-align: center;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;
+    margin-left: -15em;
 }
-.container-login .label { font-size: 18px; }
-.container-login input[type="text"],
-.container-login input[type="password"] {
-	margin-bottom: 10px;
-	height: 20px;
-	width: 250px;
-	padding: 5px;
-	font-size: 14px;
-	text-align: center;
+.container-login .label {
+    font-size: 18px;
 }
+.container-login input[type="text"], .container-login input[type="password"] {
+    margin-bottom: 10px;
+    height: 20px;
+    width: 250px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+.container-login #lnk-cadastrar-usuario {
+    font-size: 18px;
+    color: #F62459;
+}
+
+/* Index */
+
+.container-cadastro {
+    text-align: center;
+    position: fixed;
+    top: 40%;
+    left: 55%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;
+    margin-left: -15em;
+}
+.container-cadastro .title { font-size: 30px; font-family: semplicita; text-transform: uppercase; color: #F9690E; }
+
+.container-cadastro input[type="text"],
+.container-cadastro select {
+    width: 100%;
+    height: 40px;
+    margin: 10px;
+    text-align: center;
+    padding: 5px;
+}
+.container-cadastro select { width: 103%; }
