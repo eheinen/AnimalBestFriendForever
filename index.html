@@ -3,39 +3,42 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>ABFF - Login</title>
+	<title>ABFF</title>
 
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script src="scripts/jquery-2.2.4.min.js"></script>
-	<script src="scripts/login-script.js"></script>
+	<script src="scripts/animal.js"></script>
+	<script src="scripts/organizacao.js"></script>
+	<script src="scripts/internationalization.js"></script>
+	<script src="scripts/common.js"></script>
 </head>
 
 <body>
 
 	<div id="wrapper">
 		<div id="header">
-			<a href="index.html"><img src="images/logo.png" width="300px"></a>
+			<a href="index.html"><img src="images/logo.png" id="logo"></a>
 			<div class="menu-container">
 				<div class="dropdown">
-					<button class="dropbtn">Animais <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+					<button class="dropbtn" data-i18n="menu-animal"></button>
 					<div class="dropdown-content">
-						<a href="cadastrar-animais">Cadastrar Animais</a>
-						<a href="visualizar-animais">Visualizar Animais</a>
+						<span id="lnk-cadastrar-animais" data-i18n="menu-create-animal"></span>
+						<span id="lnk-visualizar-animais" data-i18n="menu-view-animal"></span>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn">Organizações <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+					<button class="dropbtn" data-i18n="menu-organization"></button>
 					<div class="dropdown-content">
-						<a href="cadastrar-animais">Cadastrar Organizações</a>
-						<a href="visualizar-animais">Visualizar Organizações</a>
+						<span id="lnk-cadastrar-organizacoes" data-i18n="menu-create-organization"></span>
+						<span id="lnk-visualizar-organizacoes" data-i18n="menu-view-organization"></span>
 					</div>
 				</div>
 
 				<div class="menu-links">
 					<a href="adote-seu" id="adote-seu">Adote o seu <i class="fa fa-heart" aria-hidden="true"></i></a>
 					<a href="minha-conta" id="minha-conta">Minha Conta <i class="fa fa-user" aria-hidden="true"></i></a>
-					<a href="sair" id="sair">Sair <i class="fa fa-user-times" aria-hidden="true"></i></a>
+					<a href="login.html" id="sair">Sair <i class="fa fa-user-times" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
@@ -47,22 +50,13 @@
 
 		<div id="content">
 			<div class="container-cadastro">
-				<h1 class="title">Cadastro de Animais</h1>
-				<input type="text" name="txt-nome" placeholder="Nome">
-				<br />
-				<input type="text" name="txt-data-nascimento" placeholder="Data de Nascimento">
-				<br />
-				<select name="cmb-tipo">
-					<option value="">Selecione um tipo</option>
-					<option value="cachorro">Cachorro</option>
-					<option value="gato">Gato</option>
-					<option value="pombo">Pombo</option>
-				</select>
-				<br />
-				<button class="btn-default" id="btn-limpar">Limpar</button>
-				<button class="btn-action" id="btn-cadastrar">Cadastrar</button>
-			</div>
+
+
+		  </div>
 		</div>
+
+
+
 		<div id="footer">
 		</div>
 

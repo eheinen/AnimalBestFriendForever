@@ -19,6 +19,7 @@ ul, li {
 a {
     text-decoration: none;
 }
+select { -webkit-appearance:none; }
 #wrapper {
     min-height: 100%;
     position: relative;
@@ -54,7 +55,7 @@ a {
     border-style: none;
     cursor: pointer;
     outline: none;
-    margin: 10px 0 10px 0;
+    margin: 10px 5px 10px 5px;
 }
 .btn-action {
     background-color: #52B3D9;
@@ -109,21 +110,23 @@ a {
     margin-right: 20px;
 }
 .dropdown-content {
+    z-index:9999;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
-.dropdown-content a {
+.dropdown-content span {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: center;
     font-family: timeburner;
+    cursor: pointer;
 }
-.dropdown-content a:hover {
+.dropdown-content span:hover {
     background-color: #f1f1f1
 }
 .dropdown:hover .dropdown-content {
@@ -190,24 +193,53 @@ a {
 
 /* Index */
 
+#logo { width: 20%; }
+
 .container-cadastro {
     text-align: center;
-    position: fixed;
-    top: 40%;
-    left: 55%;
-    width: 30em;
-    height: 18em;
-    margin-top: -9em;
-    margin-left: -15em;
+    margin-top: 90px;
 }
 .container-cadastro .title { font-size: 30px; font-family: semplicita; text-transform: uppercase; color: #F9690E; }
 
 .container-cadastro input[type="text"],
+.container-cadastro textarea,
 .container-cadastro select {
-    width: 100%;
+    width: 90%;
     height: 40px;
     margin: 10px;
     text-align: center;
     padding: 5px;
+    border: solid 1px #DDD;
+    border-radius: 10px;
 }
-.container-cadastro select { width: 103%; }
+.container-cadastro select { width: 91.3%; height: 50px; }
+
+.rTable { display: block; width: 100%; margin-top: 50px; }
+.rTable .rTableHeading, .rTableBody, .rTableFoot, .rTableRow{ clear: both; }
+.rTable .rTableHead, .rTableFoot{ background-color: #EEE; }
+.rTable .rTableCell, .rTableHead { border: 1px solid #DDD; float: left; height: 17px; overflow: hidden; padding: 10px; }
+.rTable .rTable:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.rTable .rTableRow { width: 100%; }
+.rTable .col-1 { width: 45%; }
+.rTable .col-2 { width: 20%; }
+.rTable .col-3 { width: 15%; }
+.rTable .col-4 { width: 10%; }
+
+.btn-editar, .btn-remover { cursor: pointer; margin: 0 5px 0 5px; }
+
+
+.tipo-grupo-1, .tipo-grupo-2 {
+    display: inline-flex;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.tipo-grupo-1 input, .tipo-grupo-2 input { margin: 2px 5px 0 20px; cursor: pointer; }
+.tipo-grupo {
+    background: #EEE;
+    padding: 5px;
+    width: 90%;
+    margin-left: 4.5%;
+    border: solid 1px #DDD;
+    border-radius: 10px;
+}

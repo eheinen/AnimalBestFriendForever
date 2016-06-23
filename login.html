@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script src="scripts/jquery-2.2.4.min.js"></script>
 	<script src="scripts/login-script.js"></script>
+	<script src="scripts/internationalization.js"></script>
+	<script src="scripts/common.js"></script>
 </head>
 
 <body>
@@ -24,15 +26,15 @@
 		<div id="content">
       <div class="container-login">
 				<img src="images/logo.png" width="200px"><br /><br />
-        <span class="label">Usuário</span><br />
+        <span data-i18n="lbl-login-user"></span><br />
         <input type="text" maxlength="15" name="usuario" id="txt-usuario"><br ;/>
 
-        <span class="label">Senha</span><br />
+        <span data-i18n="lbl-login-password"></span><br />
         <input type="password" maxlength="15" name="senha" id="txt-senha"><br />
 
-        <button class="btn-default" id="btn-limpar">Limpar</button>
-        <button class="btn-action" id="btn-entrar">Entrar</button><br/><br/>
-				<a href="cadastrar-usuario" id="lnk-cadastrar-usuario">Não tem uma conta? As pombas resolvem essa parada!</a>
+        <button class="btn-default" data-i18n="btn-clear" id="btn-limpar"></button>
+        <button class="btn-action" data-i18n="btn-action" id="btn-entrar"></button><br/><br/>
+				<a href="cadastrar-usuario" data-i18n="lbl-login-singup" id="lnk-cadastrar-usuario"></a>
       </div>
 		</div><!-- #content -->
 
